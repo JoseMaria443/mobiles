@@ -56,7 +56,7 @@ fun DetailsScreen(
                                 Icon(
                                     imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
                                     contentDescription = if (isFavorite) "Quitar de Favoritos" else "Añadir a Favoritos",
-                                    tint = if (isFavorite) Color.Red else MaterialTheme.colorScheme.onSurface
+                                    tint = if (isFavorite) Color(0xFFEE1515) else MaterialTheme.colorScheme.onSurface
                                 )
                             }
                         }

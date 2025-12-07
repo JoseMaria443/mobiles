@@ -193,7 +193,7 @@ fun PokemonItem(
                 Icon(
                     imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
                     contentDescription = if (isFavorite) "Quitar de favoritos" else "Agregar a favoritos",
-                    tint = if (isFavorite) Color.Red else Color.Gray
+                    tint = if (isFavorite) Color(0xFFEE1515) else Color.Gray
                 )
             }
         }

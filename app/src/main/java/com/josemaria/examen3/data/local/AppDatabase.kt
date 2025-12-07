@@ -6,7 +6,7 @@ import com.josemaria.examen3.data.model.FavoritePokemon
 
 @Database(
     entities = [FavoritePokemon::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

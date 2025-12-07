@@ -45,3 +45,34 @@ data class MoveSlot(
 data class Move(
     val name: String
 )
+
+// Función de extensión para convertir FavoritePokemon a PokemonDetail
+fun FavoritePokemon.toPokemonDetail(): PokemonDetail {
+    val typesList = types?.split(",")?.map { TypeSlot(Type(it.trim())) } ?: emptyList()
+    
+    val abilitiesList = abilities?.split("|")?.mapNotNull { abilityStr ->
+        val parts = abilityStr.split(":")
+        if (parts.size == 2) {
+            AbilitySlot(
+                ability = Ability(parts[0].trim()),
+                isHidden = parts[1].trim().toBoolean()
+            )
+        } else null
+    } ?: emptyList()
+    
+    val movesList = moves?.split(",")?.map { MoveSlot(Move(it.trim())) } ?: emptyList()
+    
+    return PokemonDetail(
+        id = id,
+        name = name,
+        height = height ?: 0,
+        weight = weight ?: 0,
+        sprites = Sprites(
+            frontDefault = imageUrl,
+            frontShiny = imageUrlShiny
+        ),
+        types = typesList,
+        abilities = abilitiesList,
+        moves = movesList
+    )
+}

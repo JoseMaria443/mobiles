@@ -22,4 +22,7 @@ interface PokemonDao {
 
     @Query("SELECT EXISTS(SELECT * FROM favoritepokemon WHERE id = :pokemonId)")
     suspend fun isPokemonFavorite(pokemonId: Int): Boolean
+    
+    @Query("SELECT * FROM favoritepokemon WHERE name = :name LIMIT 1")
+    suspend fun getFavoritePokemonByName(name: String): FavoritePokemon?
 }

@@ -42,6 +42,10 @@ class PokemonRepository @Inject constructor(
     suspend fun isPokemonFavorite(pokemonId: Int): Boolean {
         return dao.isPokemonFavorite(pokemonId)
     }
+    
+    suspend fun getFavoritePokemonByName(name: String): FavoritePokemon? {
+        return dao.getFavoritePokemonByName(name)
+    }
 
     suspend fun getPokemonDetail(name: String) = api.getPokemonDetail(name)
 }

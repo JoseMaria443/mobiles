@@ -81,7 +81,8 @@ class MainViewModel @Inject constructor(
             val favoritePokemon = com.josemaria.examen3.data.model.FavoritePokemon(
                 id = pokemonId,
                 name = pokemonName,
-                imageUrl = imageUrl
+                imageUrl = imageUrl,
+                imageUrlShiny = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemonId}.png"
             )
             
             if (isFavorite) {
